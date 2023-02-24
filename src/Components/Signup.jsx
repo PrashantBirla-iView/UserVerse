@@ -77,7 +77,7 @@ function App() {
       <Navbar />
       <div className="head">
         <image src={img} />
-        <h1>Signup Page</h1>
+        <h1>Signup</h1>
         <Signup />
       </div>
       <Footer/>
