@@ -1,0 +1,98 @@
+.hell {
+  display: flex;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: cursive;
+  font-size: 3.8rem;
+  margin: 0rem 0rem 2rem 0rem;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.fontt {
+  color: #57bbf9;
+  font-weight: bold;
+  font-family: cursive;
+  font-size: 3.8rem;
+}
+.homeemain {
+  display: flex;
+  flex-direction: column;
+  background-image: url(../Images/samurai.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 17rem;
+  height: 50rem;
+}
+.ok {
+  margin: -8rem 0rem 0rem 0rem;
+  text-align: center;
+  color: whitesmoke;
+  font-family: ui-monospace;
+}
+.clickk {
+  color: whitesmoke;
+  border: none;
+    width: 10rem;
+    padding: 10px;
+  border-radius: 25px;
+  background-color: #57bbf9c8;
+  margin: 0rem 0rem 0rem 27rem;
+}
+
+.clickk:hover {
+  background-color: #0000006e;
+}
+
+.jk {
+  font-weight: bolder;
+  text-align: center;
+  color: white;
+  font-variant: small-caps;
+  padding: 10rem;
+}
+
+
+/* animated card */
+.card {
+  width: 1519px;
+  height: 300px;
+  border-radius: 0px;
+  background: rgb(33, 33, 33);
+  display: flex;
+  gap: 5px;
+  padding: .4em;
+}
+
+.card p {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all .5s;
+  background: #212121;
+  border: 1px solid #5a5a5a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card p:hover {
+  flex: 4;
+}
+
+.card p span {
+  min-width: 14em;
+  padding: .5em;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all .5s;
+  text-transform: uppercase;
+  color: #8f8f8f;
+  letter-spacing: .1em;
+}
+
+.card p:hover span {
+  transform: rotate(0);
+}
