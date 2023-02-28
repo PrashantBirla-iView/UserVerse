@@ -15,13 +15,13 @@ const history = useNavigate();
         <button className='clickk' onClick={()=> history("/signup")}>Let's Go</button>
         <h4 className='jk'>Find random users and their details in an UserVerse.</h4>
         <h5 className='ok'>User Universe Browse and Explore a Comprehensive Database of Random User Information from Around the World</h5>
-    </div> 
-  
-    <div class="card">
-    <p><span>Lorem ipsum dolor sit amet consectetur, adipisicing elit.   </span></p>
-    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.  </span></p>
-    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.   </span></p>
-</div> 
+    </div>
+    {/* <div class="book">
+    <p>Hello</p>
+    <div class="cover">
+        <p>Hover Me</p>
+    </div>
+   </div>  */}
     <Footer/>
     </>
   )

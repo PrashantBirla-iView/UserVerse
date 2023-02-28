@@ -11,8 +11,7 @@ function Signup() {
   const [password, setPassword] = useState("");
 
   function handleSignup() {
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
+   
     if (username === "") {
       alert("Enter username");
     } else if (password === "") {
@@ -24,16 +23,20 @@ function Signup() {
     } else if (!username.includes(".com")) {
       alert("please enter valid email address");
     } else {
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+    
       alert("Signup successful!");
       history("/Login");
-    }
+    } 
+    
   }
 
   return (
     <div>
       <form>
         <label>
-          Username: 
+          Username:
           <input
             type="text"
             placeholder="Create Username"
@@ -43,7 +46,7 @@ function Signup() {
         </label>
         <br />
         <label>
-          Password:  
+          Password:
           <input
             type="password"
             placeholder="Create Password"
@@ -52,17 +55,15 @@ function Signup() {
           />
         </label>
         <br />
-         <button data-text="Awesome"  onClick={handleSignup} className="button">
-    <span className="actual-text">&nbsp;SignUp&nbsp;</span>
-    <span className="hover-text" aria-hidden="true">&nbsp;SignUp&nbsp;</span>
-</button>
-        {/* <button type="button" onClick={handleSignup}>
-          Signup
-        </button> */}
+        <button data-text="Awesome" onClick={handleSignup} className="button">
+          <span className="actual-text">&nbsp;SignUp&nbsp;</span>
+          <span className="hover-text" aria-hidden="true">
+            &nbsp;SignUp&nbsp;
+          </span>
+        </button>
       </form>
       <a>
-        {" "}
-        already have an account??{" "}
+        already have an account?&nbsp;
         <span>
           <NavLink to="/Login">Sign in</NavLink>
         </span>
@@ -80,7 +81,7 @@ function App() {
         <h1>Signup</h1>
         <Signup />
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
