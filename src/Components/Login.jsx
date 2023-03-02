@@ -6,21 +6,21 @@ import Navbar from "./Navbar";
 import { NavLink } from "react-router-dom";
 function LoginPage() {
   const history = useNavigate();
-  const [username, setUsername] = useState("");
+  const [Email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function handleLogin() {
-    const storedUsername = localStorage.getItem("username");
+    const storedEmail = localStorage.getItem("Email");
     const storedPassword = localStorage.getItem("password");
     
-    if (username === storedUsername && password === storedPassword ) {
+    if (Email === storedEmail && password === storedPassword ) {
       setIsLoggedIn(true);
       localStorage.setItem("isLoggedIn",true);
       history("/Main");
       
     } else {
-      alert("Invalid username or password");
+      alert("Invalid Email or password");
     }
   }
 
@@ -32,12 +32,12 @@ function LoginPage() {
         ) : (
           <form>
             <label>
-              Username:
+              Email:
               <input
                 type="text"
-                placeholder="Enter Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Enter Email"
+                value={Email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </label>
             <br />
