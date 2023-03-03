@@ -16,12 +16,9 @@ const history = useNavigate();
         <h4 className='jk'>Find random users and their details in an UserVerse.</h4>
         <h5 className='ok'>User Universe Browse and Explore a Comprehensive Database of Random User Information from Around the World</h5>
     </div>
-    {/* <div class="book">
-    <p>Hello</p>
-    <div class="cover">
-        <p>Hover Me</p>
-    </div>
-   </div>  */}
+     <div className='homeslide'>
+     "Design your digital universe with UserVerse."
+     </div>
     <Footer/>
     </>
   )
