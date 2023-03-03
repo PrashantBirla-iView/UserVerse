@@ -1,18 +1,9 @@
-
-html,
-body {
-  height: 100%;
-   
-}
-
-#page-content {
-  flex: 1 0 auto;
-}
-
-.text-white-50 {
-  padding: 40.6rem;
-  color: rgb(87 87 87)!important;
+footer {
+  background-color: #333;
+  color: #8c8c8c;
+  padding: 20px;
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 } 
-
- 
- 

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../Components/Loginsignup.css";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-
+import { NavLink } from "react-router-dom";
 function LoginPage() {
   const history = useNavigate();
   const [username, setUsername] = useState("");
@@ -13,10 +13,12 @@ function LoginPage() {
   function handleLogin() {
     const storedUsername = localStorage.getItem("username");
     const storedPassword = localStorage.getItem("password");
-
-    if (username === storedUsername && password === storedPassword) {
+    
+    if (username === storedUsername && password === storedPassword ) {
       setIsLoggedIn(true);
+      localStorage.setItem("isLoggedIn",true);
       history("/Main");
+      
     } else {
       alert("Invalid username or password");
     }
@@ -30,7 +32,7 @@ function LoginPage() {
         ) : (
           <form>
             <label>
-              Username:  
+              Username:
               <input
                 type="text"
                 placeholder="Enter Username"
@@ -40,7 +42,7 @@ function LoginPage() {
             </label>
             <br />
             <label>
-              Password:  
+              Password:
               <input
                 type="password"
                 placeholder="Enter Password"
@@ -49,17 +51,25 @@ function LoginPage() {
               />
             </label>
             <br />
-            <button data-text="Awesome" onClick={handleLogin} className="button">
-    <span className="actual-text">&nbsp;Login&nbsp;</span>
-    <span className="hover-text" aria-hidden="true">&nbsp;Login&nbsp;</span>
-</button>
-            {/* <button type="button" onClick={handleLogin}> 
-              Login
-            </button> */}
-           
-          </form> 
+            <button
+              data-text="Awesome"
+              onClick={handleLogin}
+              className="button"
+            >
+              <span className="actual-text">&nbsp;Login&nbsp;</span>
+              <span className="hover-text" aria-hidden="true">
+                &nbsp;Login&nbsp;
+              </span>
+            </button>
+            
+          </form>
         )}
-      </div>
+      </div><a>
+              Don't have an account?&nbsp;
+              <span>
+                <NavLink to="/SignUp">SignUp</NavLink>
+              </span>
+            </a>
     </>
   );
 }
@@ -71,9 +81,8 @@ function App() {
       <div className="head1">
         <h1>Login</h1>
         <LoginPage />
-
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
