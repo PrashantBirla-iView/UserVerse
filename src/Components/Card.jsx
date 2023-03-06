@@ -27,6 +27,7 @@ function Card() {
            
             <a className="main-link">
               <img className="img" src={item.avatar} />
+              <br />
               <div className="font">
                 {item.first_name} &nbsp;
                 {item.last_name}{" "}
@@ -52,13 +53,13 @@ function Card() {
                       <h4 className="title-font"> 
                       {item.employment.title}</h4>
                       <br></br>
-                      <h6>Name:</h6>
+                      <div className="section-1"><h6>Name:</h6>
                       {item.first_name} &nbsp;{item.last_name}
-                      <h6>Email: </h6>
-                      {item.email}
+                      <h6>Email: </h6></div>
+                     <div className="section-2"> {item.email}
                       <h6>Gender:</h6> {item.gender}
-                      <h6>Phone Number:</h6> {item.phone_number}
-                      
+                      <h6>Phone Number:</h6> {item.phone_number}</div>
+
                     </div>
                   </div>
                 </div>

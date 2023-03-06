@@ -7,11 +7,12 @@ import Users from "./Pages/Users";
 import   Card   from "./Components/Card";
 import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
-
+import Tempt2 from "./Components/Tempt2"
 function App() {
   return (
+    
     <><div className="good">
-      <BrowserRouter>
+      <BrowserRouter> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="Signup" element={<Signup />} />
@@ -20,6 +21,8 @@ function App() {
           <Route path="Footer" element={<Footer />} />
           <Route path="Card" element={<Card />} />
           <Route path="Home" element={<Home />} />
+          {/* <Route path="Tempt2" element={<Tempt2 />} /> */}
+
          <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter></div>

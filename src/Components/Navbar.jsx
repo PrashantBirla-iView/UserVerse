@@ -1,21 +1,24 @@
 import React, { useEffect } from "react";
 import "../Components/Navbar.css";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
-  const [loggedIn, setloggedIn] = useState(false)
-  useEffect(() => {
-    setloggedIn(localStorage.getItem("isLoggedIn"))
-  }, [ ])
-       
+   
+  const isLoggedIn = !!localStorage.getItem("email");
+    const handleLogout = () => {
+        localStorage.clear();
+        
+         
+      };   
   return (
     
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="/">
           UserVerse
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
@@ -23,19 +26,26 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          {loggedIn ?  <a className="anc" href="/" onClick={() => localStorage.clear()}>Logout</a>  : 
-          <div class="navbar-nav">
-            {/* <a class="nav-link active" aria-current="page" href="#">Home</a> */}
-            <a class="nav-link" href="/Login">
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        {isLoggedIn ? (
+        
+            <NavLink className ="anc" onClick={handleLogout} to="/Home">Logout</NavLink>
+      
+        ) :
+        
+       
+          <div className="navbar-nav">
+ 
+            <NavLink className="nav-link" to="/Login">
               Login
-            </a>
-            <a class="nav-link" href="/SignUp">
+            </NavLink>
+            <NavLink className="nav-link" to="/SignUp">
               SignUp
-            </a>
+            </NavLink>
           </div>}
+          {/* } */}
         </div>
       </div>
     </nav>

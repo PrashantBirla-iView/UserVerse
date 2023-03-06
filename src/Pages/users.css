@@ -3,6 +3,14 @@
    
 }
 .modall {
-  height: 35rem;
- 
+  height: 37rem;
+ background-color: ivory;
+}
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  border-radius: 8px;
+  padding: var(--bs-modal-padding);
+  background-color: black;
 }

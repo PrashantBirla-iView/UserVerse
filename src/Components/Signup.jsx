@@ -1,3 +1,4 @@
+  
 import React, { useState } from "react";
 import "../Components/Loginsignup.css";
 import { NavLink } from "react-router-dom";
@@ -5,81 +6,99 @@ import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 import img from "../Images/unsplash.jpg";
 import Footer from "./Footer";
+import * as Yup from "yup";
 function Signup() {
   const history = useNavigate();
-  const [Email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [password2, setPassword2] = useState("");
-  const [username, setusername] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errors, setErrors] = useState({});
 
-  function handleSignup() {
-    if (Email === "") {
-      alert("Enter an Email");
-    } else if (password === "") {
-      alert("enter a password");
-    } else if (password.length <= 4) {
-      alert("enter minimum 5 character");
-    } else if (!Email.includes("@")) {
-      alert("please enter valid email address");
-    } else if (!Email.includes(".com")) {
-      alert("please enter valid email address");
-    } else if (password === password2) {
-      localStorage.setItem("Email", Email);
-      localStorage.setItem("username", username);
-      localStorage.setItem("password", password);
-      localStorage.setItem("password2", password2);
+const schema = Yup.object().shape({
+    name: Yup.string().required("Name is required*"),
+    email: Yup.string()
+      .email("Invalid email address*")
+      .required("Email is required*"),
+    password: Yup.string().required("Password is required* "),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref("password"), null], "Passwords must match*")
+      .required("Confirm Password is required*"),
+  });
 
-      alert("Signup successful!");
-      history("/Login");
-    } else {
-      alert("both password must be same");
-    }
+  function handleSignup(event) {
+    
+    event.preventDefault();
+    schema
+      .validate({ name, email, password, confirmPassword }, { abortEarly: false })
+      .then(() => {
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+        alert("Signup successful");
+        history("/Login");
+      })
+      .catch((err) => {
+        const errors = {};
+        err.inner.forEach((e) => {
+          errors[e.path] = e.message;
+        });
+        setErrors(errors);
+      });
   }
 
   return (
     <div>
-      <form>
-        <label>
-          Email:
-          <input
-            type="text"
-            placeholder="Create Email"
-            value={Email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
+      <form onSubmit={handleSignup}>
+         
+        <div>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        {errors.email && <div style={{ color: "red" }}>{errors.email}</div>}
+      </div>
         <br />
-        <label>
-          UserName:
-          <input
-            type="text"
-            placeholder="Enter Username"
-            value={username}
-            onChange={(e) => setusername(e.target.value)}
-          />
-        </label>
+        
+        <div>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+        {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
+      </div>
         <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            placeholder="Create Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
+        <div>
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
+        {errors.password && <div style={{ color: "red" }}>{errors.password}</div>}
+      </div>
+        
         <br />
-        <label>
-          Re-Enter Password:
-          <input
-            type="password"
-            placeholder="Re-enter Password"
-            value={password2}
-            onChange={(e) => setPassword2(e.target.value)}
-          />
-        </label>
+        <div>
+        <label htmlFor="confirmPassword">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          value={confirmPassword}
+          onChange={(event) => setConfirmPassword(event.target.value)}
+        />
+        {errors.confirmPassword && <div style={{ color: "red" }}>{errors.confirmPassword}</div>}
+      </div>
+        
         <br />
-        <button data-text="Awesome" onClick={handleSignup} className="button">
+        <button data-text="Awesome" type="submit" className="button">
           <span className="actual-text">&nbsp;SignUp&nbsp;</span>
           <span className="hover-text" aria-hidden="true">
             &nbsp;SignUp&nbsp;
