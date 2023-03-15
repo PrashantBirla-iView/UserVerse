@@ -28,7 +28,7 @@ function LoginPage() {
       .then(() => {
         const storedEmail = localStorage.getItem("email");
         const storedPassword = localStorage.getItem("password");
-        
+
         if (email === storedEmail && password === storedPassword) {
           history("/Users");
           toast.success("login successfull");
@@ -53,7 +53,6 @@ function LoginPage() {
   // };
   return (
     <>
-   
       <form onSubmit={handleLogin}>
         <div>
           <label className="label1" htmlFor="email">
@@ -85,30 +84,17 @@ function LoginPage() {
           )}
         </div>
         <br />
-
-        <button>
-    Login
-</button>
-        {/* <button
-          // onClick={toastMsg}
-          data-text="Awesome"
-          type="submit"
-          className="button"
-        >
-          <span className="actual-text">&nbsp;Login&nbsp;</span>
-          <span className="hover-text" aria-hidden="true">
-            &nbsp;Login&nbsp;
-          </span>
-        </button> */}
+        <button className="anime-button">Login</button>
       </form>
       <a>
         Don't have an account?&nbsp;
         <span>
-          <NavLink to="/SignUp" className="temp">SignUp</NavLink>
+          <NavLink to="/SignUp" className="temp">
+            SignUp
+          </NavLink>
         </span>
       </a>
       <ToastContainer />
-      
     </>
   );
 }
@@ -116,12 +102,12 @@ function LoginPage() {
 function App() {
   return (
     <>
-       <Navbar/>
+      <Navbar />
       <div className="head1">
         <h1>Login</h1>
         <LoginPage />
       </div>
-       <Footer/>
+      <Footer />
     </>
   );
 }

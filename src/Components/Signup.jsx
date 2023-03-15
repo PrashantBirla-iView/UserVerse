@@ -50,10 +50,9 @@ const schema = Yup.object().shape({
   }
 
   return (
-   <>  <div>
-     
-      <form onSubmit={handleSignup}>
-         
+   <>  <div> 
+      <form onSubmit={handleSignup}> 
+      
         <div>
         <label htmlFor="email">Email:</label>
         <input 
@@ -102,10 +101,10 @@ const schema = Yup.object().shape({
           onChange={(event) => setConfirmPassword(event.target.value)}
         />
         {errors.confirmPassword && <div style={{ color: "red" }}>{errors.confirmPassword}</div>}
-      </div>
-        
+      </div> 
+
         <br />
-        <button type="submit" className="button">
+        <button type="submit" className="anime-button">
           SignUp  
         </button>
       </form>
@@ -114,8 +113,7 @@ const schema = Yup.object().shape({
       <span>
           <NavLink className='temp' to="/Login">Sign in</NavLink>
         </span>
-      </a>
-      
+      </a> 
     </div></>
   );
 }

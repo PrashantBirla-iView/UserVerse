@@ -3,6 +3,7 @@ import "../Components/Card.css";
 import ClipLoader from "react-spinners/ClipLoader";
 import { TbPoint } from "react-icons/tb";
 import { RxCross1 } from "react-icons/rx";
+import placeholderImage from '../Images/user.png';
 const override = {
   display: "flex",
   margin: "0 auto",
@@ -11,14 +12,13 @@ const override = {
   width: "100px",
   top: "50%",
   left: "50%",
-  borderColor: "black",
+ 
 };
 
 function Card() {
   const [data, setData] = useState([]);
-
   let [loading, setLoading] = useState(true);
- 
+
   useEffect(() => {
     fetch("https://random-data-api.com/api/v2/users?size=52")
       .then((response) => response.json())
@@ -28,7 +28,6 @@ function Card() {
       })
       .catch((error) => console.log(error));
   }, []);
- 
 
   return (
     <>
@@ -36,7 +35,6 @@ function Card() {
         <div className="row">
           <div className="main col-sm-15">
             <ClipLoader
-              
               loading={loading}
               cssOverride={override}
               size={50}
@@ -51,20 +49,22 @@ function Card() {
                   data-bs-target="#exampleModal"
                 >
                   <a className="main-link">
-                    <img className="img" src={item.avatar} />
+
+  <img className="img" src={item.avatar} alt="No-image" />   
+                   
+                   
                     <br />
                     <div className="font">
                       {item.first_name} &nbsp;
                       {item.last_name}{" "}
                     </div>
-
                     <div className="emp-t">{item.employment.title}</div>
-
                     <br></br>
                   </a>
                 </div>
 
                 {/* modal started */}
+
                 <div
                   className="modal fade"
                   id="exampleModal"
@@ -72,13 +72,18 @@ function Card() {
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  
                   <div className="modal-dialog">
-                    <div className="modal-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style={{ width: "50rem" }}>
+                    <div
+                      className="modal-content"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="exampleModalLongTitle"
+                      aria-hidden="true"
+                      style={{ width: "50rem" }}
+                    >
                       <div className="modal-body">
-                        <div className="modall"> 
-                     
-                        <RxCross1 className="cross"    />
+                        <div className="modall">
+                          <RxCross1 className="cross" data-bs-dismiss="modal" />
                           <img className="modal-image" src={item.avatar} />
                           <br />
                           <div className="user-details-modal">
@@ -86,23 +91,19 @@ function Card() {
                               {item.employment.title}
                             </h4>
                             <br /> <TbPoint />
-                            &nbsp;<b>Name: </b> {item.first_name} &nbsp;
-                            {item.last_name}
+                            &nbsp;<b>Name: </b> {item.first_name}&nbsp;{item.last_name}
                             <br /> <TbPoint />
                             &nbsp;<b>Email: </b> {item.email}
                             <br /> <TbPoint />
                             &nbsp;<b>Gender: </b> {item.gender}
                             <br /> <TbPoint />
-                            &nbsp;<b>Date of birth: </b>
-                            {item.date_of_birth}
+                            &nbsp;<b>Date of birth: </b> {item.date_of_birth}
                             <br /> <TbPoint />
                             &nbsp;<b>Phone Number: </b> {item.phone_number}
                             <br /> <TbPoint />
-                            &nbsp;<b>Address: </b>
-                            {item.address.street_name},{item.address.street_address},{item.address.state},{item.address.country}
+                            &nbsp;<b>Address: </b> {item.address.street_name}, {item.address.street_address}, {item.address.state}, {item.address.country}
                             <br /> <TbPoint />
-                            &nbsp;<b>Subscription plan: </b>
-                            {item.subscription.plan}
+                            &nbsp;<b>Subscription plan: </b> {item.subscription.plan}
                             <br /> <TbPoint />
                             &nbsp;<b>key skill: </b> {item.employment.key_skill}
                           </div>
