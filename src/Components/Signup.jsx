@@ -20,7 +20,9 @@ const schema = Yup.object().shape({
     email: Yup.string()
       .email("Invalid email address*")
       .required("Email is required*"),
-    password: Yup.string().required("Password is required* "),
+    password: Yup.string()
+      .required("Password is required* ") 
+        .min(8, "Password is too short"),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref("password"), null], "Passwords must match*")
       .required("Confirm Password is required*"),
@@ -35,7 +37,7 @@ const schema = Yup.object().shape({
         localStorage.setItem("name", name);
         localStorage.setItem("email", email);
         localStorage.setItem("password", password);
-        alert("Signup successful");
+        
         history("/Login");
       })
       .catch((err) => {
@@ -48,12 +50,14 @@ const schema = Yup.object().shape({
   }
 
   return (
-    <div>
+   <>  <div>
+     
       <form onSubmit={handleSignup}>
          
         <div>
         <label htmlFor="email">Email:</label>
-        <input
+        <input 
+        placeholder="Enter Your Email"
           type="email"
           id="email"
           value={email}
@@ -65,7 +69,8 @@ const schema = Yup.object().shape({
         
         <div>
         <label htmlFor="name">Name:</label>
-        <input
+        <input 
+        placeholder="Enter Your Name"
           type="text"
           id="name"
           value={name}
@@ -76,7 +81,8 @@ const schema = Yup.object().shape({
         <br />
         <div>
         <label htmlFor="password">Password:</label>
-        <input
+        <input 
+        placeholder="Enter a Password"
           type="password"
           id="password"
           value={password}
@@ -88,7 +94,8 @@ const schema = Yup.object().shape({
         <br />
         <div>
         <label htmlFor="confirmPassword">Confirm Password:</label>
-        <input
+        <input 
+        placeholder="Re-Enter Password"
           type="password"
           id="confirmPassword"
           value={confirmPassword}
@@ -98,33 +105,31 @@ const schema = Yup.object().shape({
       </div>
         
         <br />
-        <button data-text="Awesome" type="submit" className="button">
-          <span className="actual-text">&nbsp;SignUp&nbsp;</span>
-          <span className="hover-text" aria-hidden="true">
-            &nbsp;SignUp&nbsp;
-          </span>
+        <button type="submit" className="button">
+          SignUp  
         </button>
       </form>
-      <a>
+      <a >
         Already have an account?&nbsp;
-        <span>
-          <NavLink to="/Login">Sign in</NavLink>
+      <span>
+          <NavLink className='temp' to="/Login">Sign in</NavLink>
         </span>
       </a>
-    </div>
+      
+    </div></>
   );
 }
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <div className="head">
         <image src={img} />
         <h1>Signup</h1>
         <Signup />
       </div>
-      <Footer />
+      <Footer/>
     </>
   );
 }

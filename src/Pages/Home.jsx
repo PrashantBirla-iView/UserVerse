@@ -6,9 +6,18 @@ import Footer from "../Components/Footer";
 
 const Home = () => {
   const history = useNavigate();
+  const compare = ()=> {const isLoggedIn = !!localStorage.getItem("email");
+  if ( isLoggedIn ) {
+    history("/Users")
+  }
+  else{
+    history("/signup")
+  }
+}
+  
   return (
     <>
-      <Navbar />
+    <Navbar/>
       <div className="homeemain">
         <div className="heading">
           {" "}
@@ -17,7 +26,7 @@ const Home = () => {
             <span className="fontt">Hello!</span> welcome to UserVerse.
           </h1>
           <br />
-          <button className="clickk" onClick={() => history("/signup")}>
+          <button className="clickk" onClick={() => compare()} >
             Let's Go
           </button>
         </div>
@@ -180,8 +189,8 @@ const Home = () => {
  
 </div>
  
-
-      <Footer />
+<Footer/>
+       
     </>
   );
 };

@@ -3,7 +3,7 @@
    
 }
 .modall {
-  height: 37rem;
+  height: 20rem;
  background-color: ivory;
 }
 
@@ -12,5 +12,5 @@
   flex: 1 1 auto;
   border-radius: 8px;
   padding: var(--bs-modal-padding);
-  background-color: black;
+  background-color: #fffff0;
 }

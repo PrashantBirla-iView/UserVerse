@@ -1,17 +1,13 @@
 import React, { useEffect } from "react";
 import "../Components/Navbar.css";
-import { useState } from "react";
+ 
 import { NavLink } from "react-router-dom";
 const Navbar = () => {
-   
   const isLoggedIn = !!localStorage.getItem("email");
-    const handleLogout = () => {
-        localStorage.clear();
-        
-         
-      };   
+  const handleLogout = () => {
+    localStorage.clear();
+  };
   return (
-    
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
@@ -29,22 +25,20 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        {isLoggedIn ? (
-        
-            <NavLink className ="anc" onClick={handleLogout} to="/Home">Logout</NavLink>
-      
-        ) :
-        
-       
-          <div className="navbar-nav">
- 
-            <NavLink className="nav-link" to="/Login">
-              Login
+          {isLoggedIn ? (
+            <NavLink className="ancc" onClick={handleLogout} to="/">
+              Logout
             </NavLink>
-            <NavLink className="nav-link" to="/SignUp">
-              SignUp
-            </NavLink>
-          </div>}
+          ) : (
+            <div className="navbar-nav">
+              <NavLink className="nav-link" to="/Login">
+              <b>Login</b>
+              </NavLink>
+              <NavLink className="nav-link" to="/SignUp">
+              <b>SignUp</b> 
+              </NavLink>
+            </div>
+          )}
           {/* } */}
         </div>
       </div>
