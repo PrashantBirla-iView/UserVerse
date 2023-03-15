@@ -5,14 +5,19 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .font {
-  margin-top: 25px;
-  font-family: sans-serif;
-    
+  font-family: ui-monospace;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
 }
 
+  /* .font:hover{
+    color: #EEEEEE;
+  } */
+
 body {
-  background-color: #f8f9fa;
+  background-color:#EEEEEE; 
 }
 
 h5 {
@@ -21,8 +26,14 @@ h5 {
   color: black;
 }
 .img {
+  /* margin-bottom: 25px; */
   border-radius: 70%;
   border: 1px solid black;
+}
+
+
+.emp-t{
+  color:  rgb(82, 78, 78);;
 }
 
 .modal-dialog {
@@ -32,38 +43,64 @@ h5 {
 }
 
 .main-link {
+  background-color: #ffffff;
   text-decoration: none;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   text-align: center;
   border-radius: 5%;
-  padding: 4rem;
+  padding: 5rem;
   display: flex;
   flex-direction: column;
-  width: 16rem;
-  height: 15rem;
+  width: 18rem;
+  height: 20rem;
   justify-content: center;
 }
-
+/* 
 .main-link:hover {
-  color: #000000;
-  background-color: #d4d8d8 ;
+  color: #ffffff;
+    background-color: #00ADB5;
   border: 1px solid black;
-}
+} */
 
+/* .main-link:hover .font {
+  color: #ffffff;
+ } */
+
+/* .main-link:hover .emp-t {
+  color: #000000;
+  font-weight: bolder
+ } */
+ .user-details-modal{
+  text-align: justify;
+  margin-right: 2rem;
+ }
 .title-font {
+ 
   font-weight: 600;
   color: brown;
   font-family: revert;
   font-variant-caps: small-caps;
 }
 
+.cross{
+  float: right;
+  cursor: pointer;
+}
+
 .modal-image {
-  border: 1px solid black;
-  border-radius: 5%;
+  /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%); */
+  border: solid;
+  border-radius: 18px;
+  float: left;
+  margin-right: 40px;
+  margin-top: 86px;
+  margin-left: 10px;
+  height: 12.8rem;
+ 
 }
 
 .submain :hover {
   cursor: pointer;
 }
 
-/* spinner */
+ 

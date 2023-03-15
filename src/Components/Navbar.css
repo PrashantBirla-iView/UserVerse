@@ -1,19 +1,39 @@
 .navbar-brand {
-    margin: 0px 0px 0px 73px;
-    font-weight: bold;
+  margin: 0px 0px 0px 73px;
+  font-weight: bold;
 }
 
-    .nav-link {
-        font-family: monospace;
-        margin: 0px 60px 0px 0px;
-        font-weight: bolder;
-        font-size: x-large;
-    }
- .anc{
-    text-decoration: none;
-    color: black;
-    font-family: monospace;
-        margin: 0px 60px 0px 0px;
-        font-weight: bolder;
-        font-size: x-large;
- }
+.nav-link {
+  font-family: monospace;
+  margin: 0px 60px 0px 0px;
+  font-weight: bolder;
+  font-size: x-large;
+}
+.anc {
+  text-decoration: none;
+  color: black;
+  font-family: monospace;
+  margin: 0px 60px 0px 0px;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.ancc {
+  text-decoration: none;
+  color: black;
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 60px 8px 0px;
+}
+
+.nav-link:hover {
+  color: blue;
+}
+
+.ancc:hover {
+  color: blue;
+}
