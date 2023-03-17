@@ -21,7 +21,7 @@ const Home = () => {
       <div className="homeemain">
         <div className="heading">
           {" "}
-          <h1 className="hell">
+          <h1 className="heading-1">
             {" "}
             <span className="fontt">Hello!</span> welcome to UserVerse.
           </h1>
@@ -32,10 +32,11 @@ const Home = () => {
         </div>
         <div className="mid-text">
           {" "}
-          <h4 className="jk">
+          <h4 className="first-line">
             Find random users and their details in an UserVerse.
           </h4>
-          <h5 className="ok">
+          
+          <h5 className="sec-line">
             User Universe Browse and Explore a Comprehensive Database of Random
             User Information from Around the World
           </h5>

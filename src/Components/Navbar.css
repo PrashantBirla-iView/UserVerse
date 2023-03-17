@@ -31,9 +31,16 @@
 }
 
 .nav-link:hover {
-  color: blue;
+  color: rgb(73, 73, 73);
 }
 
 .ancc:hover {
-  color: blue;
+  color: rgb(255, 0, 0);
+}
+@media (min-width: 320px) and (max-width: 450px) {
+
+
+  .navbar-brand{
+    margin: 0%;
+  }
 }

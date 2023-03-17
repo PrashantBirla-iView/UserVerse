@@ -8,16 +8,16 @@
 
 .font {
   font-family: ui-monospace;
-    font-weight: bolder;
-    color: rgb(0, 0, 0);
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
 }
 
-  /* .font:hover{
+/* .font:hover{
     color: #EEEEEE;
   } */
 
 body {
-  background-color:#EEEEEE; 
+  background-color: #eeeeee;
 }
 
 h5 {
@@ -26,13 +26,14 @@ h5 {
   color: black;
 }
 .img {
+  line-height: 50px;
+  text-align: center; 
+  height: 100px;
   border-radius: 70%;
-  border: 1px solid black;
 }
 
- 
-.emp-t{
-  color:  rgb(82, 78, 78);;
+.emp-t {
+  color: rgb(82, 78, 78);
 }
 
 .modal-dialog {
@@ -53,6 +54,7 @@ h5 {
   width: 18rem;
   height: 20rem;
   justify-content: center;
+  align-items: center;
 }
 /* 
 .main-link:hover {
@@ -69,19 +71,18 @@ h5 {
   color: #000000;
   font-weight: bolder
  } */
- .user-details-modal{
+.user-details-modal {
   text-align: justify;
   margin-right: 2rem;
- }
+}
 .title-font {
- 
   font-weight: 600;
   color: brown;
   font-family: revert;
   font-variant-caps: small-caps;
 }
 
-.cross{
+.cross {
   float: right;
   cursor: pointer;
 }
@@ -95,11 +96,34 @@ h5 {
   margin-top: 86px;
   margin-left: 10px;
   height: 12.8rem;
- 
 }
 
 .submain :hover {
   cursor: pointer;
 }
 
- 
+.image-b {
+  width: 8rem;
+  border-radius: 70%;
+  border: 3px dashed black;
+  display: flex;
+  flex-direction: column;
+  min-height: 7rem;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 320px) and (max-width: 450px) {
+
+  .modal-dialog{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 40rem;
+  }
+  .modal-image {
+    
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+     
+    margin: 3rem;
+}
+}
