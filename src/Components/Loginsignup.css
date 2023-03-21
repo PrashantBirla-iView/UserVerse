@@ -1,4 +1,4 @@
-form {
+.form-s {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +26,7 @@ label {
   background-image: url(../Images/unsplash.jpg);
 }
 
-input {
+.input-1 {
   width: 30rem;
   padding: 10px;
   border: 1px solid #ccc;
@@ -37,7 +37,7 @@ input {
 }
 
 @media (min-width: 320px) and (max-width: 450px) {
-  form{
+  .form-s{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,7 +57,7 @@ input {
   a {
     margin: 0rem;
   }
-  input {
+  .input-1 {
     width: 20rem;
     padding: 10px;
     border: 1px solid #ccc;

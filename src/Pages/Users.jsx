@@ -1,8 +1,8 @@
 import React from "react";
-import Card from "../Components/Card";
-import Footer from "../Components/Footer";
+import Card from "../Components/Card/Card";
+import Footer from "../Components/Footer/Footer";
  
-import Navbar from "../Components/Navbar";
+import Navbar from "../Components/Navbar/Navbar";
 import "../Pages/users.css";
 
 const Users = () => {
