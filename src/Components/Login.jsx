@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Components/Loginsignup.css";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "../Components/Footer/Footer";
+import Navbar from "./Navbar/Navbar";
 import { NavLink } from "react-router-dom";
 import * as Yup from "yup";
 import { ToastContainer, Toast, toast } from "react-toastify";
@@ -53,13 +53,14 @@ function LoginPage() {
   // };
   return (
     <>
-      <form onSubmit={handleLogin}>
+      <form className="form-s" onSubmit={handleLogin}>
         <div>
           <label className="label1" htmlFor="email">
             Email:
           </label>
-          <input
-            placeholder="Enter Email"
+          <input 
+          className="input-1"
+            placeholder="Enter Your Email"
             type="email"
             id="email"
             value={email}
@@ -72,8 +73,9 @@ function LoginPage() {
           <label className="label1" htmlFor="password">
             Password:
           </label>
-          <input
-            placeholder="Enter Password"
+          <input 
+          className="input-1"
+            placeholder="Enter Your Password"
             type="password"
             id="password"
             value={password}

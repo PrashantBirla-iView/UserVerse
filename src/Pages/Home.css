@@ -19,6 +19,7 @@ button {
   font-weight: bold;
   font-family: cursive;
   font-size: 3.8rem;
+  
 }
 .homeemain {
   display: flex;
@@ -36,9 +37,10 @@ button {
   font-weight: bold;
   font-family: cursive;
   font-size: 3.8rem;
+ 
 }
 .homeslide {
-  background-image: url(../Images/revolvingv.jpg);
+  background-image: url(../);
   background-repeat: no-repeat;
   background-size: cover;
   height: 55rem;
@@ -86,6 +88,11 @@ button {
   background-image: url(../Images/revolvingv.jpg);
   background-size: cover;
   height: 41.6rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 320px) and (max-width: 450px) {
   .homeemain {
@@ -219,13 +226,20 @@ button {
   }
 }
 
-.container {
+.container-2{
   /* position: absolute; */
   width: 100%;
   min-height: 100vh;
   display: flex;
-
   justify-content: space-between;
+  align-items: center;
+}
+.container-1{
+  /* position: absolute; */
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 

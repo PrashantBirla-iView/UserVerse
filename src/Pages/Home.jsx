@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
-import "./Home.css";
+import Navbar from "../Components/Navbar/Navbar";
+import "../Pages/Home.css";
 import { useNavigate } from "react-router-dom";
-import Footer from "../Components/Footer";
+import Footer from "../Components/Footer/Footer";
 
 const Home = () => {
   const history = useNavigate();
@@ -43,7 +43,7 @@ const Home = () => {
         </div>
       </div>
            <div className="background">
-        <div class="container">
+        <div class="container-1">
           <article class="card">
             <a href="#" class="card__link">
               <div class="card__icon">

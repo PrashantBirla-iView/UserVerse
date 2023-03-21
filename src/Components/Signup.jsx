@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import "../Components/Loginsignup.css";
 import { NavLink } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import img from "../Images/unsplash.jpg";
-import Footer from "./Footer";
+import Footer from "../Components/Footer/Footer";
 import * as Yup from "yup";
 function Signup() {
   const history = useNavigate();
@@ -51,11 +51,11 @@ const schema = Yup.object().shape({
 
   return (
    <>  <div> 
-      <form onSubmit={handleSignup}> 
+      <form className="form-s" onSubmit={handleSignup}> 
       
         <div>
         <label htmlFor="email">Email:</label>
-        <input 
+        <input className="input-1" 
         placeholder="Enter Your Email"
           type="email"
           id="email"
@@ -68,7 +68,7 @@ const schema = Yup.object().shape({
         
         <div>
         <label htmlFor="name">Name:</label>
-        <input 
+        <input className="input-1" 
         placeholder="Enter Your Name"
           type="text"
           id="name"
@@ -80,7 +80,7 @@ const schema = Yup.object().shape({
         <br />
         <div>
         <label htmlFor="password">Password:</label>
-        <input 
+        <input className="input-1" 
         placeholder="Enter a Password"
           type="password"
           id="password"
@@ -93,7 +93,7 @@ const schema = Yup.object().shape({
         <br />
         <div>
         <label htmlFor="confirmPassword">Confirm Password:</label>
-        <input 
+        <input className="input-1" 
         placeholder="Re-Enter Password"
           type="password"
           id="confirmPassword"
