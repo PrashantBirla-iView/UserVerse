@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9dcf6fe6.css",
+    "main.js": "/static/js/main.8cd3f203.js",
+    "static/media/samurai.jpg": "/static/media/samurai.8d4a160cbbbf38de3145.jpg",
+    "static/media/unsplash.jpg": "/static/media/unsplash.a0dafa42f6add6336f31.jpg",
+    "static/media/revolvingv.jpg": "/static/media/revolvingv.f226d58b2749bc8cd5e5.jpg",
+    "static/media/Cu.webp": "/static/media/Cu.505eb45bbf4942f88d87.webp",
+    "index.html": "/index.html",
+    "static/media/index.js": "/static/media/index.adca9250fba60251deae.js",
+    "main.9dcf6fe6.css.map": "/static/css/main.9dcf6fe6.css.map",
+    "main.8cd3f203.js.map": "/static/js/main.8cd3f203.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9dcf6fe6.css",
+    "static/js/main.8cd3f203.js"
+  ]
+}
