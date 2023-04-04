@@ -11,11 +11,7 @@
   font-weight: bolder;
   color: rgb(0, 0, 0);
 }
-
-/* .font:hover{
-    color: #EEEEEE;
-  } */
-
+ 
 body {
   background-color: #eeeeee;
 }
@@ -56,21 +52,7 @@ h5 {
   justify-content: center;
   align-items: center;
 }
-/* 
-.main-link:hover {
-  color: #ffffff;
-    background-color: #00ADB5;
-  border: 1px solid black;
-} */
-
-/* .main-link:hover .font {
-  color: #ffffff;
- } */
-
-/* .main-link:hover .emp-t {
-  color: #000000;
-  font-weight: bolder
- } */
+ 
 .user-details-modal {
   text-align: justify;
   margin-right: 2rem;
