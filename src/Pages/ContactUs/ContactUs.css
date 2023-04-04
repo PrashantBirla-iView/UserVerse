@@ -29,7 +29,7 @@ font-size: xxx-large;
 }
 .contact-text{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 }
  
@@ -91,7 +91,7 @@ font-size: xxx-large;
     }
     .contact-text{
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
     }
      
@@ -149,7 +149,7 @@ font-size: xxx-large;
     }
     .contact-text{
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
     }
       

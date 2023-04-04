@@ -29,7 +29,7 @@ button {
   background-image: url(../Images/samurai.jpg);
   background-position: center;
   background-size: cover;
-  height: 668px;
+  height: 100vh;
   background-repeat: no-repeat;
 }
 .fontt {
@@ -87,7 +87,7 @@ button {
 .background {
   background-image: url(../Images/revolvingv.jpg);
   background-size: cover;
-  height: 41.6rem;
+        height: 43.6rem;;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -122,7 +122,7 @@ button {
   .background {
     background-image: url(../Images/revolvingv.jpg);
     background-size: cover; 
-    height: 37.6rem;
+    height: 100vh;
   }
   .clickk {
     color: whitesmoke;
